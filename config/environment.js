@@ -57,6 +57,6 @@ module.exports = function (environment) {
     serverTokenRevocationEndpoint: ENV.API.Host + '/oauth/revoke'
   };
 
-
+  ENV.contentSecurityPolicyHeader = 'Disabled-Content-Security-Policy';
   return ENV;
 };
