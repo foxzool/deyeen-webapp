@@ -1,12 +1,12 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'deyeen-webapp',
-    environment: environment,
-    baseURL: '/',
+    environment:  environment,
+    baseURL:      '/',
     locationType: 'auto',
-    EmberENV: {
+    EmberENV:     {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -16,6 +16,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    API: {
+      Host: 'http://localhost:3000'
     }
   };
 
@@ -42,6 +46,17 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['simple-auth'] = {
+    crossOriginWhitelist: [ENV.API.Host],
+    authorizer:           'simple-auth-authorizer:oauth2-bearer'
+  };
+
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint:           ENV.API.Host + '/oauth/token',
+    serverTokenRevocationEndpoint: ENV.API.Host + '/oauth/revoke'
+  };
+
 
   return ENV;
 };
