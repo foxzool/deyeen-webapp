@@ -1,11 +1,16 @@
 <div class="ui page grid">
   <nav class="ui text menu navbar column">
     <div class="left menu">
-      <a href="" class="item">Deyeen</a>
+      <a class="item">Deyeen</a>
     </div>
     <div class="right menu">
-      <a href="" class="item" {{action 'signin'}}>登录</a>
-      <a href="" class="item" {{action 'signup'}}>注册</a>
+      {{#if session.isAuthenticated}}
+        <a {{ action 'invalidateSession' }} class="item">登出</a>
+      {{else}}
+        <a href="" class="item" {{action 'signin'}}>登录</a>
+        <a href="" class="item" {{action 'signup'}}>注册</a>
+      {{/if}}
+
     </div>
   </nav>
 </div>

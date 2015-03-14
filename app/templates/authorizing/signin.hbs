@@ -1,15 +1,16 @@
-<div class="header">
-  Demo Modal
-</div>
+<div class="header">登录</div>
 <div class="content">
-  Content
-</div>
-<div class="actions">
-  <div class="ui black button">
-    Cancel
-  </div>
-  <div class="ui positive right labeled icon button">
-    Ok
-    <i class="checkmark icon"></i>
-  </div>
+  <form class="ui form" {{action "authenticate" on="submit"}}>
+    <div class="field">
+      <label for="identification">用户名</label>
+      {{input type='text' value=identification}}
+    </div>
+    <div class="field">
+      <label for="password">密码</label>
+      {{input type='password' value=password}}
+    </div>
+    <div class="field">
+      {{input type='submit' class='ui submit button' value='登录'}}
+    </div>
+  </form>
 </div>
