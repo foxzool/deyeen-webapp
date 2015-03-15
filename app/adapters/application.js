@@ -1,6 +1,8 @@
-import HalAdapter from "ember-data-hal-9000/adapter";
+import DS from 'ember-data';
 
-export default HalAdapter.extend({
-  host:      '',
+export default DS.RESTAdapter.extend({
+  headers: {
+    'Content-Type': 'application/vnd.api+json'
+  },
   namespace: 'api/v1'
 });
