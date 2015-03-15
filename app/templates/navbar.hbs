@@ -1,17 +1,28 @@
-<div class="ui page grid">
-  <nav class="ui text menu navbar column">
-    <div class="left menu">
-      <a class="item">Deyeen</a>
-    </div>
+<div class="sixteen wide column">
+  <div class="ui inverted large menu">
+    <div class="item">Deyeen</div>
+      {{#link-to 'application' class='item'}}<i class="home icon"></i> 首页{{/link-to}}
+    <a class="item">
+      <i class="browser icon"></i> 产品
+    </a>
+    <a class="item">
+      <i class="user icon"></i> 最新
+    </a>
+    <a class="item">
+      <i class="user icon"></i> 热门
+    </a>
+    <a class="item">
+      <i class="user icon"></i> 商店
+    </a>
+
     <div class="right menu">
       {{#if session.isAuthenticated}}
         <div class="item">{{session.currentUser.username}}</div>
-        <a {{ action 'invalidateSession' }} class="item">登出</a>
+        <a {{ action 'invalidateSession' }} class="item"><i class="sign out icon"></i>登出</a>
       {{else}}
-        <a href="" class="item" {{action 'signin'}}>登录</a>
-        <a href="" class="item" {{action 'signup'}}>注册</a>
+        <a href="" class="item" {{action 'signin'}}><i class="sign in icon"></i>登录</a>
+        <a href="" class="item" {{action 'signup'}}><i class="add user icon"></i>注册</a>
       {{/if}}
-
     </div>
-  </nav>
+  </div>
 </div>
