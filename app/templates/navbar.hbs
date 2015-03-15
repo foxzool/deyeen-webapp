@@ -5,6 +5,7 @@
     </div>
     <div class="right menu">
       {{#if session.isAuthenticated}}
+        <div class="item">{{session.currentUser.username}}</div>
         <a {{ action 'invalidateSession' }} class="item">登出</a>
       {{else}}
         <a href="" class="item" {{action 'signin'}}>登录</a>

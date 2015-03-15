@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
       };
 
       this.store.createRecord('user', this.getProperties('username', 'password')).save()
-        .then(onSuccess, onFailure);
+        .then(onSuccess(), onFailure());
     }
   }
 });
