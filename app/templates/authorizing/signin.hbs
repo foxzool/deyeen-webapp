@@ -1,6 +1,12 @@
 <div class="header">登录</div>
 <div class="content">
-  <form class="ui form" {{action "authenticate" on="submit"}}>
+  <form {{bind-attr class=":ui hasError:error :form"}} {{action "authenticate" on="submit"}}>
+    {{#if hasError}}
+      <div class="ui error message">
+        <div class="header">登录失败</div>
+        <p>用户名或密码错误，请重试</p>
+      </div>
+    {{/if}}
     <div class="field">
       <label for="identification">用户名</label>
       {{input type='text' value=identification}}
@@ -10,7 +16,7 @@
       {{input type='password' value=password}}
     </div>
     <div class="field">
-      {{input type='submit' class='ui submit button' value='登录'}}
+      {{input type='submit' class='ui submit primary button' value='登录'}}
     </div>
   </form>
 </div>

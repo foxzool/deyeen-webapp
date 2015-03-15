@@ -1,6 +1,15 @@
 <div class="header">注册</div>
 <div class="content">
-  <form class="ui form" {{action "join" on="submit"}}>
+  <form {{bind-attr class=":ui hasError:error :form"}} {{action "join" on="submit"}} >
+    {{#if hasError}}
+      <div class="ui error message">
+        <div class="header">注册失败</div>
+        {{#each error in errorMessages}}
+          {{log error}}
+          <p>{{error.message}}</p>
+        {{/each}}
+      </div>
+    {{/if}}
     <div class="field">
       <label for="">用户名</label>
       {{input type='text' value=username}}
@@ -10,7 +19,7 @@
       {{input type='password' value=password}}
     </div>
     <div class="field">
-      {{input type='submit' class='ui submit button' value='注册'}}
+      {{input type='submit' class='ui submit primary button' value='注册'}}
     </div>
   </form>
 </div>
