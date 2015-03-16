@@ -1,7 +1,9 @@
 <div class="sixteen wide column">
   <div class="ui inverted large menu">
     <div class="item">Deyeen</div>
-      {{#link-to 'application' class='item'}}<i class="home icon"></i> 首页{{/link-to}}
+    {{#link-to 'application' class='item'}}
+      <i class="home icon"></i> 首页
+    {{/link-to}}
     <a class="item">
       <i class="browser icon"></i> 产品
     </a>
@@ -11,9 +13,9 @@
     <a class="item">
       <i class="user icon"></i> 热门
     </a>
-    <a class="item">
+    {{#link-to 'products' class='item'}}
       <i class="shop icon"></i> 商店
-    </a>
+    {{/link-to}}
 
     <div class="right menu">
       {{#if session.isAuthenticated}}

@@ -48,12 +48,13 @@ module.exports = function (environment) {
   }
 
   ENV['simple-auth'] = {
+    crossOriginWhitelist: [ENV.API.Host],
     authorizer:           'simple-auth-authorizer:oauth2-bearer'
   };
 
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint:           '/oauth/token',
-    serverTokenRevocationEndpoint: '/oauth/revoke'
+    serverTokenEndpoint:           ENV.API.Host + '/oauth/token',
+    serverTokenRevocationEndpoint: ENV.API.Host + '/oauth/revoke'
   };
 
   ENV.contentSecurityPolicyHeader = 'Disabled-Content-Security-Policy';

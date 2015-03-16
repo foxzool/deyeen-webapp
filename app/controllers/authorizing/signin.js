@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin'
+import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Controller.extend(LoginControllerMixin, {
   hasError:      false,
@@ -11,7 +11,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
         self.send('closeModal', 'authorizing/signin');
       }, function () {
         self.set('hasError', true);
-      })
+      });
     }
   }
 })

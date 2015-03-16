@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Session from "simple-auth/session";
 
 export function initialize(container) {
