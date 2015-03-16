@@ -8,7 +8,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
     'authenticate': function () {
       var self = this;
       self._super().then(function () {
-        self.send('closeModal', 'authorizing/signin');
+        self.send('closeModal', 'authentication/signin');
       }, function () {
         self.set('hasError', true);
       });

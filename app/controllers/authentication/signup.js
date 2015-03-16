@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   hasError:      false,
   errorMessages: null,
   actions:       {
-    'join': function () {
+    'submit': function () {
       var self = this;
 
       this.store.createRecord('user', this.getProperties('username', 'password')).save()
@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
             identification: self.get('username'),
             password:       self.get('password')
           });
-          self.send('closeModal', 'authorizing/signup');
+          self.send('closeModal', 'authentication/signup');
         },
         function (response) {
           self.set('hasError', true);

@@ -1,6 +1,6 @@
 <div class="header">注册</div>
 <div class="content">
-  <form {{bind-attr class=":ui hasError:error :form"}} {{action "join" on="submit"}} >
+  <form {{bind-attr class=":ui hasError:error :form"}} {{action "submit" on="submit"}} >
     {{#if hasError}}
       <div class="ui error message">
         <div class="header">注册失败</div>

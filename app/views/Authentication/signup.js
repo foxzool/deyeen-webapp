@@ -3,7 +3,7 @@ import SemanticModalMixin from 'semantic-ui-ember/mixins/modal';
 
 export default Ember.View.extend(SemanticModalMixin, {
   classNames:   ['ui', 'modal', 'small'],
-  templateName: 'authorizing/signup',
+  templateName: 'authentication/signup',
   closable:     true,
   offset:       300
 });
